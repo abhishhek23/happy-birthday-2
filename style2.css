@@ -371,3 +371,16 @@ z-index: 45;
 #mewmew.animationOp{
     animation: opacityHeart 1s 1s forwards;
 }
+.wish{
+    z-index: 1000;
+    position: relative;
+    opacity: 0;
+    top: 48vh;
+    color: white;
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    animation: fadeIn 1s ease-in-out 5s forwards;
+}
+@keyframes fadeIn {
+    to { opacity: 1;}
+}
