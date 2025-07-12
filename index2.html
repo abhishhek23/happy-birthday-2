@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paper Plane Animation</title>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
+  <style>
+    #continueBtn {
+      display: none;
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      background-color: #ff68b4;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      font-family: "Happy Monkey", cursive;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+      z-index: 9999;
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Optional label -->
+  <div class="abc">aanbhy</div>
+
+  <!-- Plane animation wrapper -->
+  <div class="wrapper">
+    <div class="triangle-tail"></div>
+    <div class="plane">
+      <img src="img/plane-removebg-preview.png" alt="Plane" />
+    </div>
+
+    <!-- Stars -->
+    <div class="star1">*</div>
+    <div class="star2">*</div>
+    <div class="star3">*</div>
+    <div class="star4">*</div>
+    <div class="star5">*</div>
+    <div class="star6">*</div>
+    <div class="star7">*</div>
+    <div class="star8">*</div>
+    <div class="star9">*</div>
+    <div class="star10">*</div>
+
+    <!-- Letter box -->
+    <div class="box__letter">
+      <div class="letter__border">
+        <div class="letter">
+          <div class="title__letter"></div>
+          <div class="content__letter">
+            <div class="left">
+              <img id="heart__letter" src="https://media.giphy.com/media/YKUvclrGYmDKXwtphf/giphy.gif" alt="">
+              <img class="heart heart_1" style="--t: 0.2s" width="20" src="img/heart.png" alt="">
+              <img class="heart heart_2" style="--t: 0.4s" width="20" src="img/heart.png" alt="">
+              <img class="heart heart_3" style="--t: 0.6s" width="20" src="img/heart.png" alt="">
+              <img class="heart heart_4" style="--t: 0.8s" width="20" src="img/heart.png" alt="">
+            </div>
+            <div class="right">
+              <div class="love__img">
+                <img src="https://media.giphy.com/media/m85llaN7ZkFIHtURiC/giphy.gif" alt="" width="220">
+              </div>
+              <div class="text__letter">
+                <p></p>
+              </div>
+              <img id="mewmew" width="80" src="img/mewmew.gif" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Continue Button -->
+  <button id="continueBtn" onclick="goNext()">Continue</button>
+
+  <!-- ✅ Script to show button and handle navigation -->
+  <script>
+    // Show button after 6 seconds
+    setTimeout(() => {
+      const btn = document.getElementById("continueBtn");
+      if (btn) btn.style.display = "block";
+    }, 6000);
+
+    // Go to next page
+    function goNext() {
+      window.location.href = "index3.html"; // Replace with your desired link
+    }
+  </script>
+</body>
+</html>
