@@ -2,184 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Envelope Letter Popup</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paper Plane Animation</title>
+  <link rel="stylesheet" href="style3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #feecea;
-      font-family: 'Dancing Script', cursive;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .envelope-wrapper {
-      position: relative;
-      background: #f5edd1;
-      width: 350px;
-      height: 250px;
-      box-shadow: 0 0 40px #1c1c1c;
-      cursor: pointer;
-    }
-    .envelope {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-    .envelope::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      z-index: 2;
-      border-top: 130px solid #ecdeb8;
-      border-right: 175px solid transparent;
-      border-left: 175px solid transparent;
-      transform-origin: top;
-      transition: all 0.5s ease-in-out 0.7s;
-    }
-    .envelope::after {
-      content: "";
-      position: absolute;
-      z-index: 2;
-      border-top: 130px solid transparent;
-      border-right: 175px solid #e6cfa7;
-      border-bottom: 120px solid #e6cfa7;
-      border-left: 175px solid #e6cfa7;
-    }
-    .letter {
-      position: absolute;
-      right: 20%;
-      bottom: 0;
-      width: 54%;
-      height: 80%;
-      background: white;
-      box-shadow: 0 0 5px #1c1c1c;
-      padding: 20px 10px;
-      text-align: center;
-      transition: all 1s ease-in-out;
-      z-index: 1;
-    }
-    .heart {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 30px;
-      height: 30px;
-      background: #c2465d;
-      z-index: 3;
-      transform: translate(-50%, -50%) rotate(45deg);
-      transition: transform 0.5s ease-in-out 1s;
-      box-shadow: 0 1px 6px #1c1c1c;
-      cursor: pointer;
-    }
-    .heart:before,
-    .heart:after {
-      content: "";
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background-color: #c2465d;
-      border-radius: 50%;
-    }
-    .heart:before {
-      top: -15px;
-    }
-    .heart:after {
-      right: 15px;
-    }
-    .box__letter {
+    #continueBtn {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      width: 100vw;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-    }
-    .letter__border {
-      background: #fff8e4;
-      border-radius: 15px;
-      padding: 20px;
-      position: relative;
-      width: 90%;
-      max-width: 600px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-    .title__letter {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .text__letter {
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
       font-size: 1.2rem;
-      line-height: 1.5;
-      text-align: justify;
-    }
-    .close {
-      top: 10px;
-      position: inherit;
-      right: 20px;
-      left: 95%;
+      background-color: #ff68b4;
+      border: none;
+      border-radius: 30px;
+      color: white;
       cursor: pointer;
-      font-size: 24px;
-      color: #c2465d;
+      font-family: "Happy Monkey", cursive;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+      z-index: 9999;
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="envelope-wrapper">
-      <div class="envelope">
-        <div class="letter"></div>
-      </div>
-      <div class="heart"></div>
-    </div>
-  </div>
 
-  <div class="box__letter">
-    <div class="letter__border">
-      <div class="close"><i class="fa-solid fa-xmark"></i></div>
-      <div class="title__letter">To you <i class="fa-solid fa-heart"></i></div>
-      <div class="text__letter">
-  <video id="birthdayVideo" width="100%" controls muted>
-    <source src="./videos/birthday.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-</div>
-    </div>
-  </div>
-  <div class="text__letter">
-</div>
+  <!-- Optional label -->
+  <div class="wish">Happy Birthday 🎉</div>
 
+  <!-- Plane animation wrapper -->
+  <div class="wrapper">
+    <div class="triangle-tail"></div>
+    <div class="plane">
+      <img src="img/plane-removebg-preview.png" alt="Plane" />
+    </div>
+
+    <!-- Stars -->
+    <div class="star1">*</div>
+    <div class="star2">*</div>
+    <div class="star3">*</div>
+    <div class="star4">*</div>
+    <div class="star5">*</div>
+    <div class="star6">*</div>
+    <div class="star7">*</div>
+    <div class="star8">*</div>
+    <div class="star9">*</div>
+    <div class="star10">*</div>
+  <!-- ✅ Continue Button -->
+  <button id="continueBtn" onclick="goNext()">Continue</button>
+
+  <!-- ✅ Script to show button and handle navigation -->
   <script>
-    const envelopeWrapper = document.querySelector('.envelope-wrapper');
-    const boxLetter = document.querySelector('.box__letter');
-    const closeBtn = document.querySelector('.close');
+    // Show button after 6 seconds
+    setTimeout(() => {
+      const btn = document.getElementById("continueBtn");
+      if (btn) btn.style.display = "block";
+    }, 6000);
 
-    envelopeWrapper.addEventListener('click', () => {
-      boxLetter.style.display = 'flex';
-    });
-
-    closeBtn.addEventListener('click', () => {
-      boxLetter.style.display = 'none';
-    });
-    setTimeout(function(){
-  document.getElementById("birthdayVideo").play();
-}, 6000);
-
+    // Go to next page
+    function goNext() {
+      window.location.href = "index4.html"; // Replace with your desired link
+    }
   </script>
 </body>
 </html>

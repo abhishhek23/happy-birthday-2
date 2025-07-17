@@ -1,7 +1,14 @@
-const envelope = document.querySelector('.envelope-wrapper');
-envelope.addEventListener('click', () => {
-  envelope.classList.toggle('flap');
-});
+// variables declarations
+var i;
+var star = document.getElementsByClassName("star").length;
+var length = document.documentElement.clientWidth;
+// we use for loop to assign unique random values for the x position and animation speed
+for (i = 0; i < star; i++) {
+  x = Math.floor(Math.random() * length);
+  y = Math.floor(Math.random() * 10);
+document.getElementsByClassName("star")[i].style.transform = "translateX(" + x + "px)";
+document.getElementsByClassName("star")[i].style.animationDuration = y + "s";  
+} 
 let datetxt = "5 April 1996";
     let datatxtletter = "My love. You are a very special girl. I always silently thank you for coming into my life. Today, I wish you all the best, lots of health, and lots of joy. I always hope we will celebrate many more birthdays like this together. Happy birthday to you.💕";
     let titleLetter = "To you";
@@ -9,7 +16,7 @@ let datetxt = "5 April 1996";
     let charArrDateLetter = datatxtletter.split('');
     let charArrTitle = titleLetter.split('');
     let currentIndex = 0;
-    let currentIndexLaetter = 0;
+    let currentIndexLetter = 0;
     let currentIndexTitle = 0;
     let date__of__birth = document.querySelector(".date__of__birth span");
     let text__letter = document.querySelector(".text__letter p");
