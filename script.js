@@ -10,7 +10,7 @@
   function goToNextPage() {
     window.location.href = "index2.html";  // Or the actual path
   }
-    let datetxt = "23 january 2006";
+    let datetxt = "29 july 2005";
     let datatxtletter = "My love. You are a very special girl. I always silently thank you for coming into my life. Today, I wish you all the best, lots of health, and lots of joy. I always hope we will celebrate many more birthdays like this together. Happy birthday to you.💕";
     let titleLetter = "To you";
     let charArrDate = datetxt.split('');

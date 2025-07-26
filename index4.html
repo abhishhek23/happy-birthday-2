@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Envelope Letter Popup</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Envelope Video Popup</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -17,12 +17,14 @@
       justify-content: center;
       height: 100vh;
     }
+
     .container {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
     }
+
     .envelope-wrapper {
       position: relative;
       background: #f5edd1;
@@ -31,11 +33,13 @@
       box-shadow: 0 0 40px #1c1c1c;
       cursor: pointer;
     }
+
     .envelope {
       position: relative;
       width: 100%;
       height: 100%;
     }
+
     .envelope::before {
       content: "";
       position: absolute;
@@ -47,6 +51,7 @@
       transform-origin: top;
       transition: all 0.5s ease-in-out 0.7s;
     }
+
     .envelope::after {
       content: "";
       position: absolute;
@@ -56,6 +61,7 @@
       border-bottom: 120px solid #e6cfa7;
       border-left: 175px solid #e6cfa7;
     }
+
     .letter {
       position: absolute;
       right: 20%;
@@ -69,6 +75,7 @@
       transition: all 1s ease-in-out;
       z-index: 1;
     }
+
     .heart {
       position: absolute;
       top: 50%;
@@ -82,6 +89,7 @@
       box-shadow: 0 1px 6px #1c1c1c;
       cursor: pointer;
     }
+
     .heart:before,
     .heart:after {
       content: "";
@@ -91,12 +99,15 @@
       background-color: #c2465d;
       border-radius: 50%;
     }
+
     .heart:before {
       top: -15px;
     }
+
     .heart:after {
       right: 15px;
     }
+
     .box__letter {
       display: none;
       position: fixed;
@@ -109,6 +120,7 @@
       align-items: center;
       z-index: 10;
     }
+
     .letter__border {
       background: #fff8e4;
       border-radius: 15px;
@@ -118,24 +130,26 @@
       max-width: 600px;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
+
     .title__letter {
       text-align: center;
       font-size: 2rem;
       margin-bottom: 20px;
     }
-    .text__letter {
-      font-size: 1.2rem;
-      line-height: 1.5;
-      text-align: justify;
-    }
+
     .close {
+      position: absolute;
       top: 10px;
-      position: inherit;
       right: 20px;
-      left: 95%;
       cursor: pointer;
       font-size: 24px;
       color: #c2465d;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      outline: none;
     }
   </style>
 </head>
@@ -152,34 +166,34 @@
   <div class="box__letter">
     <div class="letter__border">
       <div class="close"><i class="fa-solid fa-xmark"></i></div>
-      <div class="title__letter">To you <i class="fa-solid fa-heart"></i></div>
+      <div class="title__letter">To You <i class="fa-solid fa-heart"></i></div>
       <div class="text__letter">
-  <video id="birthdayVideo" width="100%" controls muted>
-    <source src="./videos/birthday.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-</div>
+        <video id="birthdayVideo" controls playsinline>
+          <source src="img/ann.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   </div>
-  <div class="text__letter">
-</div>
 
   <script>
     const envelopeWrapper = document.querySelector('.envelope-wrapper');
     const boxLetter = document.querySelector('.box__letter');
     const closeBtn = document.querySelector('.close');
+    const video = document.getElementById('birthdayVideo');
 
     envelopeWrapper.addEventListener('click', () => {
       boxLetter.style.display = 'flex';
+      video.muted = false;
+      video.currentTime = 0;
+      video.play().catch(() => setTimeout(() => video.play(), 100));
     });
 
     closeBtn.addEventListener('click', () => {
       boxLetter.style.display = 'none';
+      video.pause();
+      video.currentTime = 0;
     });
-    setTimeout(function(){
-  document.getElementById("birthdayVideo").play();
-}, 6000);
-
   </script>
 </body>
 </html>
