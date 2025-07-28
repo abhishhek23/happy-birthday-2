@@ -215,6 +215,16 @@ z-index: 45;
 animation-iteration-count: infinite;
 z-index: 45;
 }
+.star11 {
+  position: absolute;
+  top: 9vh;
+  left: 78vw;
+ color: yellow;
+ animation-name: blink;
+ animation-duration: 7s;
+animation-iteration-count: infinite;
+z-index: 45;
+}
 @keyframes blink {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -375,9 +385,9 @@ z-index: 45;
     z-index: 1000;
     position: relative;
     opacity: 0;
-    top: 48vh;
+    top: 14vh;
     color: white;
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-family: 'Dancing Script', cursive;
     animation: fadeIn 1s ease-in-out 5s forwards;
 }
@@ -385,6 +395,30 @@ z-index: 45;
     to { opacity: 1;}
 }
 .wish::after {
-  content: "🎉";
+  content: "";
   display: inline-block;
   margin-left: 10px;  }
+
+#continueBtn {
+      display: none;
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      background-color: #ff68b4;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      cursor: pointer;
+      font-family: "Happy Monkey", cursive;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+      z-index: 9999;
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
