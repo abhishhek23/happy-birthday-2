@@ -4,7 +4,7 @@ envelope.addEventListener('click', () => {
 });
 let datetxt = "5 April 1996";
     let datatxtletter = "My love. You are a very special girl. I always silently thank you for coming into my life. Today, I wish you all the best, lots of health, and lots of joy. I always hope we will celebrate many more birthdays like this together. Happy birthday to you.💕";
-    let titleLetter = "To you";
+    let titleLetter = "";
     let charArrDate = datetxt.split('');
     let charArrDateLetter = datatxtletter.split('');
     let charArrTitle = titleLetter.split('');
