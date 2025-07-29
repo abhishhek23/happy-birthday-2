@@ -619,8 +619,8 @@ body,html {
   to { opacity: 1; }
 }
 
-@media screen and (max-width: 658px)   {
-    @media screen and (max-width: 400px) {
+
+@media screen and (max-width: 400px) {
   html, body {
     font-size: 14px;
     overflow-x: hidden;
@@ -748,3 +748,4 @@ body,html {
     font-size: 1rem;
     padding: 10px 20px;
   }
+}
