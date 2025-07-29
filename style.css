@@ -620,170 +620,131 @@ body,html {
 }
 
 @media screen and (max-width: 658px)   {
-    body, html{
-        background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
-    }
-    .flag__birthday .flag__left {
-        transform: rotate(-10deg) translate(-119px,3px);
-    }
+    @media screen and (max-width: 400px) {
+  html, body {
+    font-size: 14px;
+    overflow-x: hidden;
+  }
 
-    .flag__birthday .flag__right {
-        transform: rotate(10deg) translate(-106px,39px) scaleX(-1);
-    }
+  .content {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
 
-    .content {
-        width: 100%;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 25px;
-        align-items: center;
-        padding-top: 2rem;
-    }
+  .content .left,
+  .content .right {
+    width: 100%;
+    top: auto;
+    left: auto;
+    position: relative;
+  }
 
-    .title {
-        position: relative;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        font-family: "Titan One", sans-serif;
-        font-size: 1.5rem;
-        letter-spacing: 8px;
-        flex-direction: column;
-        perspective: 1000px;
-    }
+  .content .right {
+    margin-top: 2rem;
+  }
 
-    #btn__letter {
-        position: relative;
-        margin-top: 17px;
-        width: 209px;
-        background-color: var(--color-text-pink);
-        outline: none;
-        padding: 6px 4px;
-        font-size: 1rem;
-        border-radius: 50px;
-        border: 3px solid var(--color-black);
-        font-family: "Sriracha", cursive;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 2;
-        /* transform: scale(1); */
-        transition: all .5s ease-in-out;
-    }
+  .content .right .image {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
 
-    .cricle {
-        position: absolute;
-        top: 10px;
-        right: -54px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: scale(0);
-        animation: scaleCricle 3s 15s forwards ease-in-out;
-    }
+  .right .balloon_one {
+    top: -40px;
+    left: -40px;
+    transform: scale(0.8);
+  }
 
-    .title .hat {
-        position: absolute;
-        right: -98px;
-        top: -51px !important;
-        transform: rotate(-40deg);
-        z-index: -1;
-        animation: topHat 4s 7s forwards ease;
-    }
+  .right .balloon_two {
+    top: 140px;
+    right: -30px;
+    transform: scale(0.8);
+  }
 
-    .box__letter .letter__border {
-        position: absolute;
-        width: 90vw;
-        height: 315px;
-        background-color: var(--color-white);
-        border-radius: 27px;
-        padding: 17px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        display: none;
-    }
+  .cricle {
+    top: 10px;
+    right: 10px;
+    transform: scale(0.8);
+  }
 
-    .letter__border .letter {
-        width: 100%;
-        height: 100%;
-        background-color: var(--color-bg-letter);
-        border-radius: 10px;
-        padding-top: 15px;
-    }
+  .text__cricle {
+    width: 70px;
+    height: 70px;
+    font-size: 0.5rem;
+  }
 
-    .letter__border .letter .title__letter {
-        text-align: center;
-        font-family: 'Dancing Script', cursive;
-        font-weight: bold;
-        font-size: 1.4rem;
-    }
+  .decorate_star.star1,
+  .decorate_star.star2,
+  .decorate_star.star3,
+  .decorate_star.star4,
+  .decorate_star.star5 {
+    transform: scale(0.6);
+  }
 
-    .letter__border .letter .content__letter {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        padding-top: .7rem;
-        padding-bottom: 70px;
-    }
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
 
-    .content__letter .right .text__letter {
-        margin-top: -14px;
-        padding: 20px 15px 10px 15px;
-        font-family: 'Dancing Script', cursive;
-        font-size: .8rem;
-    }
+  .title .hat {
+    top: -300px;
+    right: 20px;
+    width: 60px;
+  }
 
-    .content__letter .right .love__img {
-        opacity: 0;
-        position: absolute;
-        right: 126px;
-        top: 167px;
-    }
+  .date__of__birth {
+    width: 240px !important;
+    height: 40px !important;
+    font-size: 0.9rem;
+    margin: 1rem auto 0 auto;
+  }
 
-    .love__img img {
- 
-            width: 84px;
+  .name {
+    bottom: -15px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+  }
 
-    }
+  .name span,
+  .date__of__birth span {
+    margin: 0 10px;
+  }
 
-    .content .right .image {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        border: 6px solid var(--color-black);
-    }
+  .box__letter .letter__border {
+    width: 90vw;
+    height: 400px;
+    padding: 10px;
+  }
 
-    .name {
-        position: absolute;
-        padding: 0px 3px;
-        bottom: -6px;
-        border: 3px solid var(--color-black);
-    }
+  .content__letter {
+    flex-direction: column;
+  }
 
-    .name span {
-        font-size: 1rem;
-    }
+  .content__letter .left,
+  .content__letter .right {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+  }
 
-    .right .balloon_one {
-        position: absolute;
-        top: 10px;
-        left: -77px;
-        animation: balloon1 2s infinite linear;
-    }
+  .love__img {
+    width: 100px;
+  }
 
-    .right .balloon_one img{
-        width: 76px !important;
-    }
+  .text__letter {
+    font-size: 1rem;
+  }
 
+  .next-page-button {
+    left: 35%;
+    top: 75vh;
+  }
 
-}
+  #continue-container {
+    bottom: 20px;
+  }
+
+  #continueBtn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
